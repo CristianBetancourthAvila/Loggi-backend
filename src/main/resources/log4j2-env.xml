@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <SpringProfile name="prod">
+        <!-- LOG everything in the application at DEBUG level -->
+        <AsyncLogger name="com.pagatodo.financieracontable" level="debug">
+            <AppenderRef ref="ApplicationRollingFile" />
+            <AppenderRef ref="Console" />
+        </AsyncLogger>
+    </SpringProfile>
+
+</Configuration>

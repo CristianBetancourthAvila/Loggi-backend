@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ingreso_comprobante_pdf" pageWidth="1150" pageHeight="580" orientation="Landscape" columnWidth="1110" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="547a3055-6cc9-4f92-b073-6b71fb4cb926">
+    <parameter name="comprobante" class="java.lang.Long"/>
+    <parameter name="fechaHora" class="java.lang.String"/>
+    <parameter name="recibido" class="java.lang.String"/>
+    <parameter name="tipoDocumento" class="java.lang.String"/>
+    <parameter name="numeroDocumento" class="java.lang.String"/>
+    <parameter name="valor" class="java.lang.String"/>
+    <parameter name="observacion" class="java.lang.String"/>
+    <parameter name="detalle" class="java.lang.String"/>
+    <parameter name="concepto" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="136" splitType="Stretch">
+            <image>
+                <reportElement x="0" y="30" width="120" height="90" uuid="e7caf39e-79e3-4c38-8aff-370a8d0a2611"/>
+                <imageExpression><![CDATA["images/logo-paga-todo.png"]]></imageExpression>
+            </image>
+            <line>
+                <reportElement x="660" y="3" width="1" height="131" uuid="1c144061-8b52-4cd1-be32-188f530a9d5f">
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineColor="#CCCCCC"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="130" y="50" width="228" height="71" uuid="84a8b563-c157-4421-ba2d-55447841fb23"/>
+                <textElement>
+                    <font size="12"/>
+                </textElement>
+                <text><![CDATA[NIT: 000.000.000-0
+Centro Empresarial Arrecife
+Av Cll 26 No.69D-91 P.7
+Bogotá DC]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="830" y="80" width="210" height="30" forecolor="#FF1814" uuid="8f59fe93-90c0-4f07-842c-a3e6385bf249"/>
+                <textElement textAlignment="Center">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["No.    "+$P{comprobante}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="760" y="50" width="350" height="20" uuid="f8449d7d-70dc-4784-a084-a69ccbbec668"/>
+                <textElement textAlignment="Center">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[RECIBO DE CAJA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="130" y="20" width="385" height="20" uuid="0ce09753-e3f2-45ed-8a06-7b6405ab5e71"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[PAGA TODO PARA TODO - Transacciones eficientes]]></text>
+            </staticText>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="100" splitType="Stretch">
+            <line>
+                <reportElement x="260" y="-2" width="1" height="90" uuid="6eebd347-e7a2-44bb-93fc-69cf30bfe348">
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineColor="#CCCCCC"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="620" y="-2" width="1" height="90" uuid="baf1e867-2cff-4664-8087-966462e0fa61">
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineColor="#CCCCCC"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="870" y="0" width="1" height="90" uuid="983e9862-255a-4db6-8e98-49993485ecde">
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineColor="#CCCCCC"/>
+                </graphicElement>
+            </line>
+        </band>
+    </pageHeader>
+    <columnHeader>
+        <band height="113" splitType="Stretch">
+            <staticText>
+                <reportElement x="280" y="-67" width="100" height="20" forecolor="#3A51B5" uuid="dd04dbac-27a3-4046-bb71-3816d9cf91a8"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Recibido de]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="-67" width="100" height="20" forecolor="#3A51B5" uuid="0c638d87-3da8-4685-b449-629b7e8e072b"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Fecha y Hora]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="650" y="-67" width="140" height="20" forecolor="#3A51B5" uuid="a5cba295-f033-4925-8cb9-0f4cc54fcc9f"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Tipo de documento]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="890" y="-67" width="140" height="20" forecolor="#3A51B5" uuid="c2c87c6c-fef7-4ce5-bb6d-9532600cf9fe"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[No. de Documento]]></text>
+            </staticText>
+            <line>
+                <reportElement x="515" y="23" width="1" height="90" uuid="8c9218cd-5cb9-4841-99fd-25f53cc8ff5b">
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineColor="#CCCCCC"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="10" y="-37" width="240" height="30" uuid="c4e20924-9ee3-479f-a7d7-30a2bbd454b2"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{fechaHora}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="280" y="-37" width="330" height="30" uuid="1c1ff775-cb46-4fe9-a111-a95fe923d252"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{recibido}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="650" y="-37" width="180" height="30" uuid="241eae36-4995-4d49-947b-a57bfdb7f48c"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{tipoDocumento}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="890" y="-37" width="170" height="30" uuid="c7a9846a-e61a-4f84-b656-3de2a3367637"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{numeroDocumento}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="320" y="50" width="100" height="20" forecolor="#3A51B5" uuid="b95ef981-ee5d-448a-b2d0-2138c53192f0"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Detalle]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="320" y="80" width="180" height="30" uuid="fabda998-1829-4386-902a-634d122c1b6a"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{detalle}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="300" y="23" width="1" height="90" uuid="206b3cd8-4ad0-4a9d-9774-f099ff045809">
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineColor="#CCCCCC"/>
+                </graphicElement>
+            </line>
+            <textField pattern="#,##0">
+                <reportElement x="880" y="80" width="240" height="30" uuid="2af78aeb-a21a-42e0-b583-822b4fcc9e71"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA["$"+$P{valor}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="10" y="46" width="130" height="20" forecolor="#3A51B5" uuid="ad513f8d-0063-4078-b811-e0a7dcba371f"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Por Concepto de ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="550" y="50" width="140" height="20" forecolor="#3A51B5" uuid="fbe9572d-bb47-4894-ace6-dd03b22f31c3"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Observación]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="550" y="80" width="290" height="30" uuid="4291533e-efc8-4e8d-b9ec-d881ab13fd82"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{observacion}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="850" y="23" width="1" height="90" uuid="c349f78b-398a-4a29-abf8-ba2fa664e58e">
+                    <property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.width" value="px"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <graphicElement>
+                    <pen lineColor="#CCCCCC"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="880" y="50" width="140" height="20" forecolor="#3A51B5" uuid="823bffae-e16e-4c4c-b488-67b06703eb36"/>
+                <textElement markup="styled">
+                    <font size="13" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Valor A Pagar]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="10" y="80" width="270" height="30" uuid="154a86ad-f35f-41c3-b983-2e7e57432b16"/>
+                <textElement>
+                    <font size="13"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{concepto}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="110" splitType="Stretch">
+            <image>
+                <reportElement x="0" y="20" width="1110" height="50" uuid="98492751-5509-43dd-87b1-dc76f26a6425"/>
+                <imageExpression><![CDATA["images/advertencia-legal.png"]]></imageExpression>
+            </image>
+        </band>
+    </detail>
+</jasperReport>
